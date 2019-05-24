@@ -41,4 +41,4 @@ Installer [docker](https://www.docker.com)
 
 ## LICENSE
 
-[![GPLv3+](http://gplv3.fsf.org/gplv3-127x51.png)](https://github.com/oda-alexandre/dnscrypt/blob/master/LICENSE)
+[![GPLv3+](http://gplv3.fsf.org/gplv3-127x51.png)](https://github.com/oda-alexandre/gtkhash/blob/master/LICENSE)
