@@ -1,41 +1,38 @@
-# IMAGE TO USE
 FROM debian:stretch-slim
 
-# MAINTAINER
 MAINTAINER https://www.oda-alexandre.com/
 
-# VARIABLES
 ENV USER gtkhash
 ENV LANG fr_FR.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 
-# INSTALL PACKAGES
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN echo -e '\033[36;1m ******* INSTALL PACKAGES ******** \033[0m' && \
+apt-get update && apt-get install -y --no-install-recommends \
 sudo \
 ca-certificates \
 locales \
-gtkhash && \
+gtkhash
 
-# SELECT LOCALES
-echo ${LANG} > /etc/locale.gen && locale-gen && \
+RUN echo -e '\033[36;1m ******* CHANGE LOCALES ******** \033[0m' && \
+echo ${LANG} > /etc/locale.gen && locale-gen
 
-# ADD USER
+RUN echo -e '\033[36;1m ******* ADD USER ******** \033[0m' && \
 useradd -d /home/${USER} -m ${USER} && \
 passwd -d ${USER} && \
-adduser ${USER} sudo && \
+adduser ${USER} sudo
 
-# CLEANING
+RUN echo -e '\033[36;1m ******* CLEANING ******** \033[0m' && \
 apt-get --purge autoremove -y && \
 apt-get autoclean -y && \
 rm /etc/apt/sources.list && \
 rm -rf /var/cache/apt/archives/* && \
 rm -rf /var/lib/apt/lists/*
 
-# SELECT USER
+RUN echo -e '\033[36;1m ******* SELECT USER ******** \033[0m'
 USER ${USER}
 
-# SELECT WORKING SPACE
+RUN echo -e '\033[36;1m ******* SELECT WORKING SPACE ******** \033[0m'
 WORKDIR /home/${USER}
 
-# START THE CONTAINER
+RUN echo -e '\033[36;1m ******* CONTAINER START COMMAND ******** \033[0m'
 CMD gtkhash \
