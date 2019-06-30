@@ -1,6 +1,6 @@
 # GTKHASH
 
-<img src="https://salsa.debian.org/uploads/-/system/project/avatar/21127/gtkhash.png" />
+<img src="https://salsa.debian.org/uploads/-/system/project/avatar/21127/gtkhash.png" width="200" height="200"/>
 
 
 ## INDEX
