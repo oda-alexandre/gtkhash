@@ -4,10 +4,13 @@
 
 ## INDEX
 
-- [Badges](#BADGES)
-- [Introduction](#INTRODUCTION)
-- [Prerequisites](#PREREQUISITESITES)
-- [License](#LICENSE)
+- [GTKHASH](#gtkhash)
+  - [INDEX](#index)
+  - [BADGES](#badges)
+  - [INTRODUCTION](#introduction)
+  - [INSTALL](#install)
+  - [PREREQUISITES](#prerequisites)
+  - [LICENSE](#license)
 
 ## BADGES
 
