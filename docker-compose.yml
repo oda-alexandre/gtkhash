@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  gtkhash:
+    container_name: gtkhash
+    image: alexandreoda/gtkhash
+    restart: no
+    network_mode: none
+    pid: host
+    privileged: false
+    environment:
+      - DISPLAY
+    volumes:
+      - "${HOME}:/home/gtkhash"
+      - "/tmp/.X11-unix/:/tmp/.X11-unix/"
