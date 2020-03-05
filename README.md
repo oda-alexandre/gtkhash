@@ -8,8 +8,10 @@
   - [INDEX](#index)
   - [BADGES](#badges)
   - [INTRODUCTION](#introduction)
-  - [INSTALL](#install)
   - [PREREQUISITES](#prerequisites)
+  - [INSTALL](#install)
+    - [DOCKER RUN](#docker-run)
+    - [DOCKER COMPOSE](#docker-compose)
   - [LICENSE](#license)
 
 ## BADGES
@@ -24,19 +26,42 @@ Docker image of :
 
 Continuous integration on :
 
-- [gitlab](https://gitlab.com/oda-alexandre/gtkhash/pipelines)
+- [gitlab pipelines](https://gitlab.com/oda-alexandre/gtkhash/pipelines)
 
 Automatically updated on :
 
 - [docker hub public](https://hub.docker.com/r/alexandreoda/gtkhash).
 
-## INSTALL
-
-```docker run -d --name gtkhash -v ${HOME}:/home/gtkhash -v /tmp/.X11-unix/:/tmp/.X11-unix/ --pid host --network none -e DISPLAY alexandreoda/gtkhash```
-
 ## PREREQUISITES
 
 Use [docker](https://www.docker.com)
+
+## INSTALL
+
+### DOCKER RUN
+
+```docker run -d --name gtkhash -v ${HOME}:/home/gtkhash -v /tmp/.X11-unix/:/tmp/.X11-unix/ --pid host --network none -e DISPLAY alexandreoda/gtkhash
+```
+
+### DOCKER COMPOSE
+
+```yml
+version: "3.7"
+
+services:
+  gtkhash:
+    container_name: gtkhash
+    image: alexandreoda/gtkhash
+    restart: no
+    network_mode: none
+    pid: host
+    privileged: false
+    environment:
+      - DISPLAY
+    volumes:
+      - "${HOME}:/home/gtkhash"
+      - "/tmp/.X11-unix/:/tmp/.X11-unix/"
+```
 
 ## LICENSE
 
